@@ -1,25 +1,30 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 
 export const LoginPage = () => {
-  const [formSubmit, setFormSubmit] = useState<string>("");
+  // STATE
+  const [inputValue, setInputValue] = useState<string>("");
 
-  function submitForm(e: React.FormEvent<HTMLFormElement>) {
+  //   COMPORTEMENT
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    alert("Bonjour " + formSubmit);
+    alert("Bonjour " + inputValue);
 
     // Je vide le formulaire
-    setFormSubmit("");
+    setInputValue("");
   }
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
   return (
     <div>
       <h1>Bienvenue chez nous </h1>
       <h2>Connectez vous ! </h2>
 
-      <form onSubmit={submitForm} method="post">
+      <form onSubmit={handleSubmit} action="submit">
         <input
-          value={formSubmit}
-          onChange={(e) => setFormSubmit(e.target.value)}
+          value={inputValue}
+          onChange={handleChange}
           type="text"
           placeholder="Entrez votre prénom..."
           required
