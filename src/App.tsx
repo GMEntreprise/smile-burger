@@ -1,14 +1,29 @@
+import { ErrorPage } from "./components/pages/error/ErrorPage";
 import { OrderPage } from "./components/pages/OrderPage";
 import { LoginPage } from "./components/pages/login/LoginPage";
-
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 function App() {
   // Comportement
 
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route path="/" element={<LoginPage />}></Route>
+        <Route path="/order" element={<OrderPage />} />
+        <Route path="*" element={<ErrorPage />} />
+      </>
+    )
+  );
+
   return (
-    <>
-      <LoginPage />
-      <OrderPage />
-    </>
+    <div>
+      <RouterProvider router={router} />
+    </div>
   );
 }
 

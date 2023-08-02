@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 
 export const LoginForm = () => {
   // STATE
+
   const [inputValue, setInputValue] = useState<string>("");
 
   //   COMPORTEMENT

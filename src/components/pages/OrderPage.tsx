@@ -1,5 +1,9 @@
 export const OrderPage = () => {
   // COMPORTEMENT
 
-  return <div></div>;
+  return (
+    <div>
+      <h1>Bonjour</h1>
+    </div>
+  );
 };
