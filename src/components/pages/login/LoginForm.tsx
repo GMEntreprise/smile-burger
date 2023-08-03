@@ -1,19 +1,21 @@
 import React, { ChangeEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
   // STATE
 
   const [inputValue, setInputValue] = useState<string>("");
+  const navigate = useNavigate();
 
   //   COMPORTEMENT
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    alert("Bonjour " + inputValue);
-
     // Je vide le formulaire
     setInputValue("");
+
+    // Je redirige l'utilisateur vers la OrderPage avec sont nom
+    navigate(`order/${inputValue}`);
   }
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -31,7 +33,6 @@ export const LoginForm = () => {
         required
       />
       <button type="submit">Accéder à votre espace</button>
-      <Link to="/order">Vers OrderPage</Link>
     </form>
   );
 };
