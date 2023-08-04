@@ -14,7 +14,7 @@ export const LoginForm = () => {
     // Je vide le formulaire
     setInputValue("");
 
-    // Je redirige l'utilisateur vers la OrderPage avec sont nom
+    // Je redirige l'utilisateur vers la OrderPage avec le nom de l'utilisateur
     navigate(`order/${inputValue}`);
   }
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
