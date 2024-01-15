@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 export const LoginForm = () => {
   // STATE
@@ -21,13 +22,15 @@ export const LoginForm = () => {
     setInputValue(event.target.value);
   };
   return (
-    <form onSubmit={handleSubmit} action="submit">
+    <LoginFormStyled action="submit" onSubmit={handleSubmit}>
       <h1>
         Bienvenue chez nous ! <br />
-        Rend chaque ride inoubliable.{" "}
+        <span>Rend chaque ride inoubliable.</span>
       </h1>
+
+      <hr />
       <br />
-      <h2>Connectez vous ! </h2>
+      <h2>Connectez-vous ! </h2>
       <input
         value={inputValue}
         onChange={handleChange}
@@ -36,6 +39,35 @@ export const LoginForm = () => {
         required
       />
       <button type="submit">Accéder à votre espace</button>
-    </form>
+    </LoginFormStyled>
   );
 };
+const LoginFormStyled = styled.div`
+  background: green;
+  text-align: center;
+  max-width: 500px;
+  min-width: 400px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  border-radius: 5px;
+
+  hr {
+    border: 1.5px solid #bf2051;
+    font-size: 48px;
+    margin: 40px 0;
+  }
+
+  h1 {
+    color: white;
+    font-size: 48px;
+  }
+
+  span {
+    font-size: 30px;
+  }
+  h2 {
+    color: white;
+    margin: 10px 10px 10px;
+    font-size: 36px;
+  }
+`;
