@@ -22,7 +22,10 @@ export const LoginForm = () => {
   };
   return (
     <form onSubmit={handleSubmit} action="submit">
-      <h1>Bienvenue chez nous !</h1>
+      <h1>
+        Bienvenue chez nous ! <br />
+        Rend chaque ride inoubliable.{" "}
+      </h1>
       <br />
       <h2>Connectez vous ! </h2>
       <input
