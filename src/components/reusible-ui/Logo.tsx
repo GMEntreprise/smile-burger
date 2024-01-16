@@ -11,7 +11,12 @@ export default function Logo() {
 
 const LogoStyled = styled.div`
   img {
-    width: 250px;
+    width: 350px;
     height: 100%;
+  }
+  @media (max-width: 992px) {
+    img {
+      width: 300px;
+    }
   }
 `;
