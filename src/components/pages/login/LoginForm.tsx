@@ -2,6 +2,8 @@ import React, { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { BsPersonCircle } from "react-icons/bs";
+import { IoChevronForward } from "react-icons/io5";
+import { theme } from "../../../theme/index";
 
 export const LoginForm = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -37,7 +39,11 @@ export const LoginForm = () => {
           required
         />
       </div>
-      <button type="submit">Accéder à votre espace</button>
+
+      <button className="btn-with-icon" type="submit">
+        <span>Accéder à votre espace</span>
+        <IoChevronForward className="icon" />
+      </button>
     </LoginFormStyled>
   );
 };
@@ -94,6 +100,47 @@ const LoginFormStyled = styled.form`
       color: #e4e5e9;
     }
   }
+  .btn-with-icon {
+    width: 100%;
+    border: 1px solid ${theme.colors.primary};
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 24px;
+    background-color: ${theme.colors.primary};
+    white-space: nowrap;
+    text-decoration: none;
+    line-height: 1;
+
+    border-radius: ${theme.borderRadius.round};
+    color: ${theme.colors.white};
+    font-weight: 800;
+    cursor: pointer;
+
+    span {
+      font-size: 0.9rem;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: ${theme.colors.white};
+      color: ${theme.colors.primary};
+      border: 1px solid ${theme.colors.primary};
+      transition: all 200ms ease-in-out;
+    }
+    &:active {
+      color: ${theme.colors.white};
+      background-color: ${theme.colors.primary};
+      border: 1px solid ${theme.colors.primary};
+    }
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9rem;
+      margin-left: 10px;
+    }
+  }
+
   /********* RESPONSIVE **********/
   @media (max-width: 992px) {
     max-width: 100%;
