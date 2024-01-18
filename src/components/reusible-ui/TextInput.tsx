@@ -5,7 +5,7 @@ import { theme } from "../../theme";
 interface InputProps {
   value: string;
   placeholder: string;
-  icon: React.ReactElement;
+  Icon: React.ReactElement;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -13,11 +13,11 @@ export const TextInput: React.FC<InputProps> = ({
   value,
   onChange,
   placeholder,
-  icon,
+  Icon,
 }) => {
   return (
     <InputStyled>
-      {icon && icon}
+      {Icon && Icon}
       <input
         value={value}
         onChange={onChange}
@@ -51,5 +51,14 @@ const InputStyled = styled.div`
   &::placeholder {
     background: ${theme.colors.background_white};
     color: ${theme.colors.white};
+  }
+  @media (max-width: 992px) {
+    .Icon {
+      font-size: 20px;
+    }
+
+    input[type="text"] {
+      font-size: 14px;
+    }
   }
 `;

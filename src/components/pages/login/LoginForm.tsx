@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { IoChevronForward } from "react-icons/io5";
 import { theme } from "../../../theme/index";
-import { TextInput } from "../../reusible-ui/TextInput";
 import { BsPersonCircle } from "react-icons/bs";
+
+import { TextInput } from "../../reusible-ui/TextInput";
+import { PrimaryButton } from "../../reusible-ui/PrimaryButton";
 
 export const LoginForm = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -36,12 +38,12 @@ export const LoginForm = () => {
           value={inputValue}
           onChange={handleChange}
           placeholder="Entrez votre prénom..."
-          icon={<BsPersonCircle className="icon" />}
+          Icon={<BsPersonCircle className="icon" />}
         />
-        <button className="btn-with-icon" type="submit">
-          <span>Accéder à votre espace</span>
-          <IoChevronForward className="icon" />
-        </button>
+        <PrimaryButton
+          label={"Accéder à mon espace"}
+          Icon={<IoChevronForward className="icon" />}
+        />
       </div>
     </LoginFormStyled>
   );
@@ -56,13 +58,13 @@ const LoginFormStyled = styled.form`
   border-radius: 5px;
 
   hr {
-    border: 1.5px solid #bf2051;
+    border: 1.5px solid ${theme.colors.primary};
     font-size: 48px;
     margin: 40px 0;
   }
 
   h1 {
-    color: white;
+    color: ${theme.colors.white};
     font-size: 48px;
   }
 
@@ -71,50 +73,16 @@ const LoginFormStyled = styled.form`
   }
 
   h2 {
-    color: white;
+    color: ${theme.colors.white};
     margin: 10px 10px 10px;
     font-size: 36px;
   }
-
-  .btn-with-icon {
-    width: 100%;
-    border: 1px solid ${theme.colors.primary};
-    display: inline-flex;
+  .icon {
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 18px 24px;
-    background-color: ${theme.colors.primary};
-    white-space: nowrap;
-    text-decoration: none;
-    line-height: 1;
-
-    border-radius: ${theme.borderRadius.round};
-    color: ${theme.colors.white};
-    font-weight: 700;
-    cursor: pointer;
-
-    span {
-      font-size: 0.9rem;
-    }
-
-    &:hover:not(:disabled) {
-      background-color: ${theme.colors.white};
-      color: ${theme.colors.primary};
-      border: 1px solid ${theme.colors.primary};
-      transition: all 200ms ease-in-out;
-    }
-    &:active {
-      color: ${theme.colors.white};
-      background-color: ${theme.colors.primary};
-      border: 1px solid ${theme.colors.primary};
-    }
-    .icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 0.9rem;
-      margin-left: 10px;
-    }
+    font-size: 0.9rem;
+    margin-left: 10px;
   }
 
   /********* RESPONSIVE **********/
@@ -131,20 +99,6 @@ const LoginFormStyled = styled.form`
 
     h2 {
       font-size: 26px;
-    }
-
-    .input-with-icon {
-      .icon {
-        font-size: 20px;
-      }
-
-      input[type="text"] {
-        font-size: 14px;
-      }
-    }
-
-    button {
-      font-size: 16px;
     }
   }
 `;
