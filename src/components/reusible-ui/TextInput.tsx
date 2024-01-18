@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 import styled from "styled-components";
-import { theme } from "../../../theme";
+import { theme } from "../../theme";
 
 interface InputProps {
   value: string;
@@ -9,7 +9,7 @@ interface InputProps {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Input: React.FC<InputProps> = ({
+export const TextInput: React.FC<InputProps> = ({
   value,
   onChange,
   placeholder,
