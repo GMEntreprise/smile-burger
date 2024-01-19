@@ -49,6 +49,7 @@ const borderRadius = {
 };
 const shadows = {};
 const weights = {
+  extraLight: 100,
   light: 300,
   regular: 400,
   medium: 500,

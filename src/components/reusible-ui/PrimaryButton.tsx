@@ -3,7 +3,7 @@ import { theme } from "../../theme";
 
 interface PrimaryButtonProps {
   label: string;
-  Icon: React.ReactElement;
+  Icon?: React.ReactElement;
 }
 
 export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
