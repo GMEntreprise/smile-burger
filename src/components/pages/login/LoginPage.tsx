@@ -1,11 +1,11 @@
-import Logo from "../../reusible-ui/Logo";
 import { LoginForm } from "./LoginForm";
+import { Logo } from "../../reusible-ui/Logo";
 import styled from "styled-components";
 
 export const LoginPage = () => {
   return (
     <LoginPageStyled>
-      <Logo />
+      <Logo className="logo-login-page" />
       <LoginForm />
     </LoginPageStyled>
   );
@@ -31,5 +31,9 @@ const LoginPageStyled = styled.div`
     left: 0;
     bottom: 0;
     z-index: -1;
+  }
+  .logo-login-page {
+    width: 350px;
+    height: 100%;
   }
 `;

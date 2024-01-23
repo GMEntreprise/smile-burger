@@ -1,19 +1,18 @@
-import logo from "../../assets/SmileSwell_logo.png";
 import styled from "styled-components";
-
-export default function Logo() {
-  return (
-    <LogoStyled>
-      <img src={logo} alt="Logo SmileSwell" />
-    </LogoStyled>
-  );
+import logo from "../../../public/image/SmileSwell_logo.png";
+interface LogoProps {
+  className?: string;
 }
 
+export const Logo: React.FC<LogoProps> = ({ className }) => {
+  return (
+    <LogoStyled>
+      <img className={className} src={logo} alt="Logo SmileSwell" />
+    </LogoStyled>
+  );
+};
+
 const LogoStyled = styled.div`
-  img {
-    width: 350px;
-    height: 100%;
-  }
   @media (max-width: 992px) {
     img {
       max-width: 300px;
