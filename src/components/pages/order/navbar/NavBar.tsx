@@ -9,12 +9,15 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ username }) => {
   return (
     <NavBarStyled>
-      <h1>
-        Bonjour, <span>{username}</span>
-      </h1>
-      <Link to="/">
-        <button>Déconnexion</button>
-      </Link>
+      <div className="nav-left">left</div>
+      <div className="nav-right">
+        <h1>
+          Bonjour, <span>{username}</span>
+        </h1>
+        <Link to="/">
+          <button>Déconnexion</button>
+        </Link>
+      </div>
     </NavBarStyled>
   );
 };
@@ -22,6 +25,15 @@ const NavBar: React.FC<NavBarProps> = ({ username }) => {
 export default NavBar;
 
 const NavBarStyled = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: blue;
   height: 10vh;
+  .nav-left {
+    background: pink;
+  }
+  .nav-right {
+    background: #d20b8c;
+  }
 `;
