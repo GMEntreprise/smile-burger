@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Profile } from "./Profile";
 
 interface NavBarRightSideProps {
   username: string;
@@ -10,16 +10,18 @@ export const NavBarRightSide: React.FC<NavBarRightSideProps> = ({
 }) => {
   return (
     <NavBarRightSideStyled>
-      <h1>
-        Bonjour, <span>{username}</span>
-      </h1>
-      <Link to="/">
-        <button>Déconnexion</button>
-      </Link>
+      {/* <div className="admin-button">Admin Button</div> */}
+      <Profile username={username} />
     </NavBarRightSideStyled>
   );
 };
 
 const NavBarRightSideStyled = styled.div`
-  background: #d20b8c;
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+
+  /* .admin-button {
+    background: #02dc73;
+  } */
 `;

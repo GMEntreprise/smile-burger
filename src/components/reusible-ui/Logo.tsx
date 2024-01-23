@@ -18,5 +18,10 @@ const LogoStyled = styled.div`
       max-width: 300px;
       width: 100%;
     }
+    @media (max-width: 600px) {
+      img {
+        max-width: 110px;
+      }
+    }
   }
 `;

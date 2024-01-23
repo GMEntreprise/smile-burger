@@ -26,6 +26,7 @@ const NavBarStyled = styled.nav`
   background: blue;
   height: 10vh;
   padding: 0 20px;
+
   .logo-navbar {
     width: 160px;
   }
