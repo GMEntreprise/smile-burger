@@ -11,12 +11,15 @@ export const OrderPage = () => {
   return (
     <OrderPageStyled>
       <div className="container">
-        <h1>
-          Bonjour, <span>{username}</span>
-        </h1>
-        <Link to="/">
-          <button>Déconnexion</button>
-        </Link>
+        <div className="navbar">
+          <h1>
+            Bonjour, <span>{username}</span>
+          </h1>
+          <Link to="/">
+            <button>Déconnexion</button>
+          </Link>
+        </div>
+        <main>Main</main>
       </div>
     </OrderPageStyled>
   );
@@ -30,8 +33,19 @@ const OrderPageStyled = styled.div`
   align-items: center;
 
   .container {
+    display: flex;
+    flex-direction: column;
     background: orange;
+    max-width: 1400px;
+    width: 100%;
     height: 95vh;
-    width: 1400px;
+  }
+  .navbar {
+    background: blue;
+    height: 10vh;
+  }
+  main {
+    background: #f2ff00;
+    flex: 1;
   }
 `;
