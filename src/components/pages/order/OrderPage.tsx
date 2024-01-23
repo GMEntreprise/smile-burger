@@ -1,5 +1,7 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import NavBar from "./navbar/NavBar";
+import { Main } from "./Main";
 
 export const OrderPage = () => {
   // STATE
@@ -11,15 +13,8 @@ export const OrderPage = () => {
   return (
     <OrderPageStyled>
       <div className="container">
-        <div className="navbar">
-          <h1>
-            Bonjour, <span>{username}</span>
-          </h1>
-          <Link to="/">
-            <button>Déconnexion</button>
-          </Link>
-        </div>
-        <main>Main</main>
+        <NavBar username={username!} />
+        <Main />
       </div>
     </OrderPageStyled>
   );
@@ -39,13 +34,5 @@ const OrderPageStyled = styled.div`
     max-width: 1400px;
     width: 100%;
     height: 95vh;
-  }
-  .navbar {
-    background: blue;
-    height: 10vh;
-  }
-  main {
-    background: #f2ff00;
-    flex: 1;
   }
 `;

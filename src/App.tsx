@@ -1,5 +1,5 @@
 import { ErrorPage } from "./components/pages/error/ErrorPage";
-import { OrderPage } from "./components/pages/OrderPage";
+import { OrderPage } from "./components/pages/order/OrderPage";
 import { LoginPage } from "./components/pages/login/LoginPage";
 import {
   createBrowserRouter,
