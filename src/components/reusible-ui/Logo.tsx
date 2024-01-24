@@ -2,11 +2,12 @@ import styled from "styled-components";
 import logo from "../../../public/image/SmileSwell_logo.png";
 interface LogoProps {
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-export const Logo: React.FC<LogoProps> = ({ className }) => {
+export const Logo: React.FC<LogoProps> = ({ className, onClick }) => {
   return (
-    <LogoStyled>
+    <LogoStyled onClick={onClick}>
       <img className={className} src={logo} alt="Logo SmileSwell" />
     </LogoStyled>
   );

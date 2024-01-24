@@ -22,11 +22,24 @@ export const OrderPage = () => {
 };
 
 const OrderPageStyled = styled.div`
-  background: #530101;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  ::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.4) url("/public/image/background-1.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 
   .container {
     display: flex;
