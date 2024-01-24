@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import { NavBarRightSide } from "./NavBarRightSide";
-import { Logo } from "../../../reusible-ui/Logo";
 import { theme } from "../../../../theme";
 import { refreshPage } from "../../../utils/window";
+import { LogoNav } from "../../../reusible-ui/Logo";
 
 interface NavBarProps {
   username: string;
@@ -13,7 +13,7 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ username }) => {
   return (
     <NavBarStyled>
-      <Logo className={"logo-navbar"} onClick={refreshPage} />
+      <LogoNav className={"logo-navbar"} onClick={refreshPage} />
       <NavBarRightSide username={username} />
     </NavBarStyled>
   );
